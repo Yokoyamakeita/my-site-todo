@@ -27,6 +27,23 @@ const deleteTodo = (id) => {
 };
 
 const chengecheck = (id) => {
+  var str1 = id + "1";
+  var str2 = id + "2";
+  var checkid = id + "checkflag";
+
+  const btn1 = document.getElementById(str1);
+  const btn2 = document.getElementById(str2);
+
+  var input = document.getElementById(checkid);
+
+  if (input.checked === true) {
+    btn1.style.display = "none";
+    btn2.style.display = "none";
+  } else {
+    btn1.style.display = "block";
+    btn2.style.display = "block";
+  }
+
   check(id);
 };
 </script>
@@ -49,6 +66,7 @@ const chengecheck = (id) => {
         <input
           type="checkbox"
           class="check"
+          v-bind:id="todo.id + 'checkflag'"
           @change="chengecheck(todo.id)"
           :checked="todo.checked"
         />
@@ -56,8 +74,20 @@ const chengecheck = (id) => {
       </div>
 
       <div class="btns">
-        <button class="btn green" @click="showTodo(todo.id)">編</button>
-        <button class="btn pink" @click="deleteTodo(todo.id)">削</button>
+        <button
+          v-bind:id="todo.id + '1'"
+          class="btn green"
+          @click="showTodo(todo.id)"
+        >
+          編集
+        </button>
+        <button
+          v-bind:id="todo.id + '2'"
+          class="btn pink"
+          @click="deleteTodo(todo.id)"
+        >
+          削除
+        </button>
       </div>
     </div>
   </div>
@@ -118,8 +148,10 @@ const chengecheck = (id) => {
   background-color: #ff4001;
 }
 .fin {
-  text-decoration: line-through;
   background-color: #ddd;
   color: #777;
+}
+.fin:after {
+  content: "【完了】";
 }
 </style>

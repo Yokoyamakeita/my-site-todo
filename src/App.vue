@@ -28,7 +28,7 @@ import TheFooter from "./components/TheFooter.vue";
   flex-direction: column;
   align-items: center;
   min-height: 90vh;
-  width: 400px;
+  width: 500px;
   margin: 0 auto;
   font-family: sans-serif;
   background-color: white;
@@ -43,7 +43,7 @@ nav {
 }
 ul {
   display: flex;
-  padding-left: 100px;
+  padding-left: 145px;
 }
 li {
   list-style: none;
@@ -52,7 +52,7 @@ li {
   display: block;
   text-decoration: none;
   color: white;
-  margin-right: 35px;
+  margin-right: 50px;
 }
 .main {
   flex: 1;
