@@ -5,10 +5,10 @@
 <style scoped>
 .title {
   width: 100%;
-  background-color: #e3f2fd;
+  background-color: #89c8f5;
   text-align: center;
   font-size: 32px;
   font-weight: bold;
-  padding: 8px 0;
+  padding: 15px 0;
 }
 </style>

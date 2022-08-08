@@ -6,7 +6,17 @@ import TheFooter from "./components/TheFooter.vue";
 <template>
   <div class="wrap">
     <TheHeader />
-    <main class="main">メイン</main>
+    <nav>
+      <ul>
+        <li>
+          <div class="a"><router-link to="/">Home</router-link></div>
+        </li>
+        <li>
+          <div class="a"><router-link to="/about">About</router-link></div>
+        </li>
+      </ul>
+    </nav>
+    <main class="main"><router-view /></main>
     <TheFooter />
   </div>
 </template>
@@ -17,12 +27,33 @@ import TheFooter from "./components/TheFooter.vue";
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  width: 370px;
+  min-height: 90vh;
+  width: 400px;
   margin: 0 auto;
   font-family: sans-serif;
+  background-color: white;
+  padding: 30px;
 }
-
+nav {
+  width: 100%;
+  height: 40px;
+  background-color: dimgray;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+ul {
+  display: flex;
+  padding-left: 100px;
+}
+li {
+  list-style: none;
+}
+.a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  margin-right: 35px;
+}
 .main {
   flex: 1;
   width: 100%;
